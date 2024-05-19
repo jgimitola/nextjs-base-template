@@ -13,6 +13,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 
+import StoreHydration from "@/shared/components/StoreHydration";
 import createEmotionCache from "@/shared/lib/createEmotionCache";
 import globalStyles from "@/shared/styles/globalStyles";
 import theme from "@/shared/styles/theme";
@@ -55,6 +56,7 @@ export default function MyApp(props: MyAppProps) {
 
         <QueryClientProvider client={queryClient}>
           <HydrationBoundary state={pageProps.dehydratedState}>
+            <StoreHydration />
             <Component {...pageProps} />
           </HydrationBoundary>
 
